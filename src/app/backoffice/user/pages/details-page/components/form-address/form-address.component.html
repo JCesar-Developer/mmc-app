@@ -1,0 +1,13 @@
+<form [formGroup]="addressForm" id="address-form">
+  <shared-form-input label="Apartment, unit, suite, or floor #" [control]="addressForm.controls.address" [required]="false"/>
+  <shared-form-input label="City" [control]="addressForm.controls.locality" [required]="true"/>
+  <div class="row mb-2">
+    <div class="col-12 col-sm-6">
+      <shared-form-input label="State/Province" [control]="addressForm.controls.state" [required]="true"/>
+    </div>
+    <div class="col-12 col-sm-6">
+      <shared-form-input label="Postal code" [control]="addressForm.controls.postcode" [required]="true"/>
+    </div>
+  </div>
+  <shared-form-input label="Country/Region" [control]="addressForm.controls.country" [required]="true"/>
+</form>

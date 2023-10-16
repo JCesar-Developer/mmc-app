@@ -1,0 +1,14 @@
+<div class="mb-2">
+  <!-- Label -->
+  <label class="form-label">{{ label }}{{ required ? '*' : '' }}</label>
+
+  <!-- Input -->
+  <input [formControl]="control" class="form-control"
+  [ngClass]="{ 'is-invalid': control.invalid && control.touched }"
+  [required]="required" />
+
+  <!-- Error-msg -->
+  <div *ngIf="control.invalid && control.touched" class="invalid-feedback">
+    <small>{{ label }} is required</small>
+  </div>
+</div>

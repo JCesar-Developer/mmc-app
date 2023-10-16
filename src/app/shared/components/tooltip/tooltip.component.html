@@ -1,0 +1,4 @@
+<div class="hover-text" *ngIf="position === 'top' || position === 'bottom' || position === 'left' || position === 'right'">
+  <ng-content></ng-content>
+  <span class="tooltip-text" [id]="position">{{ tooltipMessage }}</span>
+</div>

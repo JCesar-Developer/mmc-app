@@ -1,0 +1,21 @@
+<!-- header-component -->
+<backoffice-header id="header"/>
+
+<main [ngClass]="{'fullscreen-setup': admin, 'sidebar-setup': !admin}">
+
+  <div #screenElement id="screen-looker" class="screen-hidden"
+  [ngClass]="{'screen-looked': showScreenLooker}" (click)="onCloseScreenLooker()"></div>
+
+  <!-- sidebar-component -->
+  <backoffice-sidebar *ngIf="!admin" (activeSideBar)="toogleScreenLooker($event)"/>
+
+  <div class="page-container">
+    <router-outlet></router-outlet>
+
+    <!-- footer-component -->
+    <backoffice-footer id="footer-container"/>
+  </div>
+
+</main>
+
+

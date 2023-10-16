@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal-header -->
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="exampleModalLabel">{{ title }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal-body -->
+      <div class="modal-body">
+        <ng-content></ng-content>
+      </div>
+
+      <!-- Modal-footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeModalButton>{{ txtBtnClose }}</button>
+        <button type="button" class="btn btn-primary" (click)="emit()" [disabled]="disabled">{{ txtBtnSave }}</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Hidden-button-trigger-modal -->
+<button #openModalButton data-bs-toggle="modal" data-bs-target="#exampleModal" hidden>
+  Launch demo modal
+</button>

@@ -1,0 +1,36 @@
+#profile-container {
+  @media (max-width: 576px) {
+    #buttons-container {
+      margin-top: 2.5rem;
+      justify-content: flex-start !important;
+    }
+  }
+}
+
+#picture-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .picture {
+    align-items: center;
+    border-radius: 50%;
+    border: solid 1px smokewhite;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    width: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 1200px) and (min-width: 768px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<form [formGroup]="profileForm">
+
+  <div class="row">
+    <div class="col-12 col-sm-6">
+        <shared-form-input label="username" [control]="profileForm.controls.username" [required]="true"/>
+        <shared-form-input label="name" [control]="profileForm.controls.name" [required]="false"/>
+        <shared-form-input label="lastname" [control]="profileForm.controls.lastname" [required]="false"/>
+    </div>
+
+    <div class="col-12 col-sm-6">
+      <shared-form-input label="nif" [control]="profileForm.controls.nif" [required]="true"/>
+      <shared-form-input label="email" [control]="profileForm.controls.email" [required]="true"/>
+      <shared-form-input label="contact phone" [control]="profileForm.controls.phone" [required]="true"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <label>preferences</label>
+      <textarea class="form-control mb-2" type="text" rows="3" formControlName="preferences"></textarea>
+    </div>
+  </div>
+
+</form>

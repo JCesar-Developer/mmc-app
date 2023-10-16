@@ -1,0 +1,48 @@
+<table class="table mb-0">
+
+  <!-- Head -->
+  <thead>
+    <tr class="table-primary">
+      <th></th>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Creation date</th>
+    </tr>
+  </thead>
+
+  <!-- Body -->
+  <tbody>
+    <ng-container *ngFor="let user of users">
+
+      <!-- Row: principal data -->
+      <tr>
+        <td (click)="toggleDetails( user )" class="pointer">⮟</td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.created | date:'dd MMMM yyyy' }}</td>
+      </tr>
+
+      <!-- Hidden row: details -->
+      <tr class="user-details-container"
+      [ngClass]="{'active': user.showDetails}">
+        <td colspan="4" class="user-details">
+          <ul class="container-fluid">
+            <li><strong>Last transaction: </strong>
+              <span *ngIf="user.lastTransaction; else noTransactions">{{ user.lastTransaction | date:'dd MMMM yyyy' }}</span>
+              <ng-template #noTransactions>Still no transactions</ng-template>
+            </li>
+            <li><strong>Total transactions: </strong>
+              {{ user.totalTransactions }} transactions
+            </li>
+            <li><strong>Total amount: </strong>
+              <span *ngIf="user.totalAmount; else noTransactions">{{ user.totalAmount | number }} €</span>
+              <ng-template #noTransactions>Still no transactions</ng-template>
+            </li>
+          </ul>
+        </td>
+      </tr>
+
+    </ng-container>
+  </tbody>
+
+</table>

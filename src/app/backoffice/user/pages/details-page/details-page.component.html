@@ -1,0 +1,33 @@
+<div id="details-container" class="container py-3">
+
+  <shared-toast></shared-toast>
+
+  <!-- Search-bar & Save-btn -->
+  <div class="row mx-2">
+    <div class="col-9">
+      <user-place-autocomplete (placeChanged)="setAddress( $event )" />
+    </div>
+    <div class="col-3 d-flex">
+      <button class="btn btn-primary" [disabled]="addressForm.invalid" (click)="onSaveAddress()">Save</button>
+    </div>
+  </div>
+
+  <!-- Separator -->
+  <hr class="mx-4">
+
+  <!-- Form-address -->
+  <div class="row mx-2">
+
+    <div class="col-12 text-color-tertiary mb-4">
+      Please enter a complete address. <strong>It is necessary to choose an option.</strong>
+    </div>
+
+    <!-- Form -->
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6">
+        <backoffice-form-address [addressForm]="addressForm"/>
+      </div>
+    </div>
+
+  </div>
+</div>

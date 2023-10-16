@@ -1,0 +1,23 @@
+@import 'src/styles.scss';
+
+.form-container {
+  border-radius: 20px;
+  background-color: $light-color;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  .title {
+    h1 {
+      font-size: 5rem;
+      font-weight: 400;
+      color: $dark-color;
+    }
+  }
+
+  .is-invalid {
+    border-color: red;
+  }
+
+  .invalid-feedback {
+    color: red;
+  }
+}

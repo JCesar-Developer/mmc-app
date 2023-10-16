@@ -1,0 +1,7 @@
+<div id="sidebar" [ngClass]="{'active': isActive }">
+  <shared-btn-collapse-menu (emit)="toggleSidebar()" />
+
+  <nav class="items-container row">
+    <backoffice-sidebar-item *ngFor="let item of sidebarItems" [sidebarItem]="item"/>
+  </nav>
+</div>

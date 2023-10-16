@@ -1,0 +1,41 @@
+<shared-spinner *ngIf="users.length === 0; else usersData"></shared-spinner>
+
+<ng-template #usersData>
+  <div class="d-flex justify-content-center mt-4">
+    <div class="container row">
+
+      <shared-toast></shared-toast>
+
+      <!-- COL-1: Table -->
+      <div id="table-component" class="col-12 col-lg-6">
+        <h3>USERS</h3>
+        <hr>
+        <backoffice-table-users [users]="users"></backoffice-table-users>
+      </div>
+
+      <!-- COL-2: Statistics -->
+      <div class="col-12 col-lg-6">
+        <h3>STATISTICS</h3>
+        <hr>
+
+        <!-- user-statistics -->
+        <ul>
+          <li><strong>More valuable user :</strong>
+            {{ moreValuableUser.username }} - {{ moreValuableUser.totalAmount | nullToZero | number }} €
+          </li>
+          <li><strong>Less valuable user :</strong>
+            {{ lessValuableUser.username }} - {{ lessValuableUser.totalAmount | nullToZero | number }} €
+          </li>
+        </ul>
+
+        <!-- chart-statistics -->
+        <div>
+          <bacckoffice-chart [users]="users"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
+
+

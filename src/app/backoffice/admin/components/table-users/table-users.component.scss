@@ -1,0 +1,42 @@
+@import 'src/styles.scss';
+
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+
+  .table-primary > * {
+    background-color: $tertiary-color;
+  }
+
+  .user-details {
+    background-color: $extra-light-color;
+  }
+
+  tr {
+
+    &.user-details-container,
+    &.user-details-container > *,
+    &.user-details-container ul,
+    &.user-details-container li {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0px 10px;
+      margin: 0;
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    }
+
+    &.user-details-container.active,
+    &.user-details-container.active > *,
+    &.user-details-container.active ul,
+    &.user-details-container.active li {
+      max-height: 500px;
+      padding: 5px 10px;
+    }
+
+    .pointer {
+      cursor: pointer;
+    }
+  }
+
+}

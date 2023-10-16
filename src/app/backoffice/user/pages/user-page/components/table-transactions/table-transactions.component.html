@@ -1,0 +1,25 @@
+<table class="table table-striped mb-0">
+
+  <!-- Head -->
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">#</th>
+      <th scope="col">Detail</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Created</th>
+      <th scope="col">Updated</th>
+    </tr>
+  </thead>
+
+  <!-- Body -->
+  <tbody>
+    <tr *ngFor="let transaction of userTransactions; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ transaction.detail }}</td>
+      <td>{{ transaction.amount | number }} €</td>
+      <td>{{ transaction.created | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ transaction.updated | date: 'dd/MM/yyyy' }}</td>
+    </tr>
+  </tbody>
+
+</table>

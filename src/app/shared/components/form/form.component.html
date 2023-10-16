@@ -1,0 +1,15 @@
+<form [formGroup]="formConfig.form" (keyup.enter)="onSubmit()">
+  <div *ngFor="let formField of formConfig.formFields" class="mb-3">
+
+    <label class="form-label">{{ formField.name | titlecase }}</label>
+
+    <input [type]="formField.type" class="form-control" [formControlName]="formField.name"
+    [ngClass]="{ 'is-invalid': formConfig.form.get(formField.name).invalid && formConfig.form.get(formField.name).touched }">
+
+    <div *ngIf="formConfig.form.get(formField.name).invalid && formConfig.form.get(formField.name).touched"
+    class="invalid-feedback">
+      <small>{{ formField.name | titlecase }} is required</small>
+    </div>
+
+  </div>
+</form>

@@ -1,0 +1,50 @@
+<div id="profile-container" class="p-4">
+  <div class="container">
+
+    <shared-toast></shared-toast>
+
+    <div class="row mb-3">
+      <div class="col-12">
+        <h2 class="text-color-tertiary">My Profile</h2>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Profile-picture -->
+      <div id="picture-container" class="col-12 col-md-3">
+        <div class="row">
+          <div class="col-12 picture">
+            <img src="assets/images/user_default.png" alt="profile picture" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Form -->
+      <div class="col-12 col-md-9">
+        <backoffice-form-profile [profileForm]="profileForm"/>
+      </div>
+    </div>
+
+    <hr class="mt-5 mb-3">
+
+    <!-- Buttons -->
+    <div class="row">
+      <div id="buttons-container" class="d-flex justify-content-end">
+        <div class="d-flex gap-3">
+          <button class="btn btn-primary" (click)="openModal()" [disabled]="!profileForm.valid">Save changes</button>
+
+          <shared-tooltip [position]="'top'" [tooltipMessage]="'Function not yet implemented!'">
+            <button class="btn btn-secondary">Change password</button>
+          </shared-tooltip>
+        </div>
+      </div>
+    </div>
+
+    <shared-modal [title]="'Save changes'" [txtBtnClose]="'Cancel'" (accepted)="saveChanges()">
+      <h2 class="text-center my-5"><span>Are you really sure about the changes?</span></h2>
+    </shared-modal>
+
+  </div>
+</div>

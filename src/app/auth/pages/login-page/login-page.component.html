@@ -1,0 +1,32 @@
+<div class="form-container p-4">
+
+  <shared-toast></shared-toast>
+
+  <!-- Header -->
+  <div class="title">
+    <h1 class="text-center text-uppercase">Login</h1>
+    <hr class="mb-3">
+  </div>
+
+  <shared-form [formConfig]="authForm" (submit)="onLogin()"/>
+
+  <!-- Not-implemented-link -->
+  <div class="d-flex justify-content-end">
+
+    <shared-tooltip [position]="'right'" [tooltipMessage]="'Function not yet implemented!'">
+      <small class="pointer d-block">
+        <a class="d-block text-end">
+          Do not have an account yet?
+        </a>
+      </small>
+    </shared-tooltip>
+
+  </div>
+
+  <!-- Login-button -->
+  <button class="btn btn-primary mt-3"
+  (click)="onLogin()" [disabled]="authForm.form.invalid || isLoggingIn">
+    Log in
+  </button>
+
+</div>
